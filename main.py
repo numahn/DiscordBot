@@ -39,7 +39,7 @@ async def on_message(message):
 
   
 
-
+#Playback commands
 @client.event
 async def play(ctx, url : str): 
   #Figure out how to connect to any call

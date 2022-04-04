@@ -37,4 +37,13 @@ async def on_message(message):
   if message.content.startswith(':3'):
     await message.channel.send(':3')
 
+  
+
+
+@client.event
+async def play(ctx, url : str): 
+  #Figure out how to connect to any call
+  voiceChannel = discord.utils.get(ctx.guild.voice_channels, name='General')
+  voice = discord.utils.get(client.voice_clients, guild=ctx.guild)
+  await voiceChannel.connect()
 client.run(token) #Runs the bot

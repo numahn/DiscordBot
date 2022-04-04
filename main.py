@@ -13,6 +13,7 @@ def get_pic():
   json_data = json.loads(response.text)
   url = json_data[0]['url']
   return url
+
 #Ready function
 @client.event
 async def on_ready():
@@ -23,10 +24,17 @@ async def on_ready():
 async def on_message(message):
   if message.author == client.user:
     return
+
   if message.content.startswith('&hello'):
     await message.channel.send('Hello! AUGHHH')
+
   if message.content.startswith('&carmen'):
     await message.channel.send('hi my name is AUHHHH       winstead im AUGHHHHHH seventeen years old and i am very similar to you did i mention to you that i am AUGGHHHHHH group of girls pushed me down a sewer')
+    
   if message.content.startswith('&cat'):
     await message.channel.send(get_pic())
+    
+  if message.content.startswith(':3'):
+    await message.channel.send(':3')
+
 client.run(token) #Runs the bot
